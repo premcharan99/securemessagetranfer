@@ -10,7 +10,7 @@ const MessageGenerator = () => {
     const generateCode = () => {
         if (message.trim() === '') return; // Prevent generating code if message is empty
         const code = Math.random().toString(36).substring(2, 8); // 6-char code
-        axios.post('https://securemessagetranfer.onrender.com/api/messages/generate', { message, code }) // Updated URL
+        axios.post('http://localhost:5000/api/messages/generate', { message, code })
             .then(() => {
                 setGeneratedCode(code);
                 setCodeVisible(true);
@@ -31,7 +31,7 @@ const MessageGenerator = () => {
                 <p>Generate your Unique code by entering the text. Timer feature coming soon!</p>
                 <textarea
                     className="message-box"
-                    placeholder="Type your message to highlight the Generate Button..."
+                    placeholder="Type your message to highlighte the Generate Button..."
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                 />

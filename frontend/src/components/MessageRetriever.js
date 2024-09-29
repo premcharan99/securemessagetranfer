@@ -9,7 +9,7 @@ const MessageRetriever = () => {
     const [retrievedMessage, setRetrievedMessage] = useState('');
 
     const retrieveMessage = () => {
-        axios.get(`https://securemessagetranfer.onrender.com/api/messages/retrieve/${code}`) // Updated URL
+        axios.get(`http://localhost:5000/api/messages/retrieve/${code}`)
             .then(response => setRetrievedMessage(response.data.message))
             .catch(err => console.error('Error retrieving message:', err));
     };
